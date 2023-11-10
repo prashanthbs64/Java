@@ -151,3 +151,236 @@ public class Main
 	}
 }
 
+5
+0 
+1 2 
+2 3 4 
+3 4 5 6 
+4 5 6 7 8 
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0 ; row < N ;row++ ) {
+	        int output_ascii = 0 + row ;
+	        for (col = 1;col <= row + 1 ; col++ ) {
+	            System.out.print((output_ascii) + " ");
+	            output_ascii++;
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+or 
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0 ; row < N ;row++ ) {
+	        for (col = row;col <= 2* row ; col++ ) {
+	            System.out.print(col + " ");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+
+5
+A 
+B C 
+C D E 
+D E F G 
+E F G H I 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0 ; row < N ;row++ ) {
+	        int output_ascii = 65 + row ;
+	        for (col = 1;col <= row + 1 ; col++ ) {
+	            System.out.print((char)(output_ascii) + " ");
+	            output_ascii++;
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+or 
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0 ; row < N ;row++ ) {
+	        for (col = row;col <= 2* row ; col++ ) {
+	            System.out.print((char)(65+col) + " ");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+
+4
+34
+234
+1234
+01234
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+	    int N = 5;
+	    for (row = 0 ; row < N ; row++) {
+	        int output = N - row - 1;
+		//int output = 65 + N - row - 1;
+	        for (col = 0 ; col < row + 1 ; col++) {
+	            System.out.print(output);
+		    //System.out.print((char)output);
+	            output++;
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+E 
+D E 
+C D E 
+B C D E 
+A B C D E 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+	    int N = 5;
+	    for (row = 0 ; row < N ; row++) {
+	        int output = 65 + N - row - 1;
+	        for (col = 0 ; col < row + 1 ; col++) {
+	            System.out.print((char)output + " ");
+	            output++;
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+   1
+  12
+ 123
+1234
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+	    int N = 4;
+	    for ( row = 0 ; row < N ; row++ ){
+	        for ( int space = 0; space < N - row - 1 ; space++ ) {
+	            System.out.print(" ");
+	        }
+	        for ( col = 1; col <= row + 1; col++ ) {
+	            System.out.print(col);
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+        1 
+       1 2 
+      1 2 3 
+     1 2 3 4 
+    1 2 3 4 5 
+   1 2 3 4 5 6 
+  1 2 3 4 5 6 7 
+ 1 2 3 4 5 6 7 8 
+1 2 3 4 5 6 7 8 9 
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+	    int N = 9;
+	    for ( row = 0 ; row < N ; row++ ){
+	        for ( int space = 0; space < N - row - 1 ; space++ ) {
+	            System.out.print(" ");
+	        }
+	        for ( col = 1; col <= row + 1; col++ ) {
+	            System.out.print(col + " ");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+4321
+321
+21
+1
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+	    int N = 4;
+	    for ( row = 0 ; row < N ; row++ ){
+	        for ( col = N - row ; col > 0; col-- ) {
+	            System.out.print(col);
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+
+   1
+  232
+ 34543
+4567654
+
+import java.util.Scanner;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    int row, col;
+    int N = 4;
+    for (row = 0; row < N; row++)
+      {
+	for (int space = 0; space < N - row - 1; space++)
+	  {
+	    System.out.print (" ");
+	  }
+	for (col = row + 1; col <= 2 * row + 1; col++)
+	  {
+	    System.out.print (col);
+	  }
+	for (col = 2 * row ; col >= row + 1; col--)
+	  {
+	    System.out.print (col);
+	  }
+	System.out.println ();
+      }
+  }
+}
