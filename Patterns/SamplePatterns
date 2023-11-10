@@ -1,0 +1,153 @@
+1. First fit the pattern to rectangular grid
+2.figure our number of rows to be printed
+3.figure out how many columns to be printed for each row
+4.what needs to be printed for each column to be printed for a given row
+
+1.
+
+000000
+000000
+000000
+000000
+000000
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+	    int M = 5; //number of rows to be printed
+	    int N = 6; //number of columns to be printed for each row
+	    for (row = 0;row < M ;row++ ) {
+	        for (col = 0;col < N ; col++ ) {
+	            System.out.print("0");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+
+
+2.
+0
+00
+000
+0000
+00000
+N(rows) = 5	 
+row	output(col)
+0	1
+1	2
+2	3
+3	4
+4	5
+ith row	i+1 print
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+	    int N = 5; //number of rows to be printed
+	    for (row = 0;row < N ;row++ ) {
+	        for (col = 0;col < row + 1 ; col++ ) {
+	            System.out.print("0");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+->5
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+  import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0;row < N ;row++ ) {
+	        for (col = 1;col <= row + 1 ; col++ ) {
+	            System.out.print(col+" ");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+
+
+- > 5
+1 
+2 2 
+3 3 3 
+4 4 4 4 
+5 5 5 5 5 
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0;row < N ;row++ ) {
+	        for (col = 1;col <= row + 1 ; col++ ) {
+	            System.out.print(row + 1 +" ");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+->5
+65 
+66 66 
+67 67 67 
+68 68 68 68 
+69 69 69 69 69 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0;row < N ;row++ ) {
+	        int output_ascii = 65;
+	        for (col = 1;col <= row + 1 ; col++ ) {
+	            System.out.print((output_ascii + row) + " ");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
+
+5
+A
+B B
+C C C
+D D D D
+E E E E E
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int row , col;
+        Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt(); //number of rows to be printed
+	    for (row = 0;row < N ;row++ ) {
+	        int output_ascii = 65;
+	        for (col = 1;col <= row + 1 ; col++ ) {
+	            System.out.print((char)(output_ascii + row) + " ");
+	        }
+	        System.out.println();
+	    } 
+	}
+}
+
