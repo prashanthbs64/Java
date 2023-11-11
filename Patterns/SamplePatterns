@@ -499,3 +499,26 @@ public class Main
     
 	}
 }
+
+****
+ ****
+  ****
+   ****
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 4;
+		for ( row = 0; row < N ; row++ ) {
+		    for (col = 0; col < N + row ; col++) {
+		        if (col < row ){
+		            System.out.print(" ");   
+		        }
+		        else {
+		            System.out.print("*");
+		        }
+		    }
+		    System.out.println();
+		} 
+	}
+}
