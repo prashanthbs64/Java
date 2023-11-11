@@ -499,6 +499,28 @@ public class Main
     
 	}
 }
+or 
+*******************************************************************************/
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 4;
+        for (row = 0 ; row < 2*N -1 ; row++) {
+            for (col = 0 ; col < 2 *N -1; col++){
+                int top = row;
+                int left = col;
+                int right = (2 * N - 2) - col;
+                int bottom = (2 * N - 2) - row;
+                System.out.print(N- Math.min(Math.min(top,bottom), Math.min(left,right)) + " ");
+            }
+            System.out.println();
+        }
+	}
+}
+
+
 
 ****
  ****
