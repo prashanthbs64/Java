@@ -544,3 +544,33 @@ public class Main
 		} 
 	}
 }
+1=1
+1+2=3
+1+2+3=6
+1+2+3+4=10
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 4;
+        for (row = 0 ; row < N ; row++) {
+            int sum = 0;
+            for (col = 1;col <= row + 1; col++) {
+                System.out.print(col);
+                if ( col < row + 1) {
+                    System.out.print("+");
+                }
+                sum += col;
+            } 
+            System.out.println("="+sum);
+        } 
+	}
+}
