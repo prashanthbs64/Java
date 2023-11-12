@@ -1,14 +1,4 @@
 
-5
-1
-2
-3
-4
-5
-1 2 3 4 5 
-1 2 99 4 5 
-1 2 47 99 4 5 
-
 import java.util.*;
 import java.io.*;
 public class Main
@@ -31,6 +21,17 @@ public class Main
 		System.out.println("Prod of elements of array is :" + prod);
 	}
 }
+
+
+5
+1
+2
+3
+4
+5
+1 2 3 4 5 
+1 2 99 4 5 
+1 2 47 99 4 5 
 
 import java.util.*;
 import java.io.*;
