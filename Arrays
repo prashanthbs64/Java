@@ -1,0 +1,23 @@
+
+import java.util.*;
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] array = new int[5];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter 5 ints one by one");
+		int sum = 0 , prod = 1;
+		for ( int i = 0; i < array.length ; i++){
+		    array[i] = sc.nextInt();
+		}
+		for ( int i = 0; i < array.length ; i++){
+		    sum = sum + array[i];
+		    prod = prod * array[i];
+		    System.out.println("uptill index " + i + " sum is " + sum);
+		    System.out.println("uptill index " + i + " prod is " + prod);
+		}		
+		System.out.println("Sum of elements of array is :" + sum);
+		System.out.println("Prod of elements of array is :" + prod);
+	}
+}
