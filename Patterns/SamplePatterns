@@ -574,3 +574,226 @@ public class Main
         } 
 	}
 }
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N ; row++) {
+		    for (col = 0 ; col <=row ; col++) {
+		        System.out.print("* ");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+* 
+* * 
+*   * 
+*     * 
+* * * * * 
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 1 ; row <= N ; row++) {
+		    for (col = 1 ; col <=row ; col++) {
+		        if (col == 1 || row == N || row == col) System.out.print("* ");
+		        else System.out.print("  ");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N ; row++) {
+		    //for (col = 0 ; col <N - row ; col++) {
+		    for (col = row ; col < N ; col++) {
+		        System.out.print("* ");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N ; row++) {
+		    for (col = row ; col < N - 1 ; col++) {
+		        System.out.print(" ");
+		    }
+		    for (col = 0; col < row + 1 ; col++ ) {
+		        System.out.print("*");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N ; row++) {
+		    for (col = row ; col < N ; col++) {
+		        System.out.print(" ");
+		    }
+		    for (col = 0; col < row + 1 ; col++ ) {
+		        System.out.print("*");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+*****
+ ****
+  ***
+   **
+    *
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N ; row++) {
+		    for (col = 0; col < row ; col++ ) {
+		        System.out.print(" ");
+		    }
+		    for (col = row ; col < N ; col++) {
+		        System.out.print("*");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+        * 
+      * * * 
+    * * * * * 
+  * * * * * * * 
+* * * * * * * * *
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N ; row++) {
+		    for (col = row ; col < N - 1 ; col++) {
+		        System.out.print("  ");
+		    }
+		    for (col = 0; col <2 * row + 1 ; col++ ) {
+		        System.out.print("* ");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+* * * * * * * * * 
+  * * * * * * * 
+    * * * * * 
+      * * * 
+        *
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N ; row++) {
+		    for (col = 0; col < row ; col++ ) {
+		        System.out.print("  ");
+		    }
+		    for (col = 0 ; col < 2 * (N - row - 1) + 1 ; col++) {
+		        System.out.print("* ");
+		    }
+		    System.out.println();
+		}
+	}
+}
+
+        * 
+      * * * 
+    * * * * * 
+  * * * * * * * 
+* * * * * * * * * 
+  * * * * * * * 
+    * * * * * 
+      * * * 
+        * 
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 5;
+		for (row = 0 ; row < N - 1 ; row++) {
+		    for (col = row ; col < N - 1 ; col++) {
+		        System.out.print("  ");
+		    }
+		    for (col = 0; col <2 * row + 1 ; col++ ) {
+		        System.out.print("* ");
+		    }
+		    System.out.println();
+		}
+		for (row = 0 ; row < N ; row++) {
+		    for (col = 0; col < row ; col++ ) {
+		        System.out.print("  ");
+		    }
+		    for (col = 0 ; col < 2 * (N - row - 1) + 1 ; col++) {
+		        System.out.print("* ");
+		    }
+		    System.out.println();
+		}		
+	}
+}
+
+1357
+3571
+5713
+7135
+
+public class Main
+{
+	public static void main(String[] args) {
+		int row , col;
+		int N = 4;
+		for (row = 0 ; row < N ; row++ ) {
+		    for (col = 2 * row + 1 ; col < 2 * N ; col = col + 2) {
+		        System.out.print(col);
+		    }
+		    int output = 1;
+		    for (col = 0; col < row ; col++) {
+		        System.out.print(output);
+		        output = output + 2;
+		        
+		    } 
+		    System.out.println();
+		} 
+	}
+}
