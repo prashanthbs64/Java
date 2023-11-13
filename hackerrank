@@ -64,3 +64,26 @@ public class MyClass {
     }
 }
 
+
+
+https://www.hackerrank.com/challenges/diagonal-difference/problem
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+      Scanner in = new Scanner(System.in);
+      int size ;  //size of square matrix
+      int c1 = 0 , c2 = 0;
+      int[][] arr; //init array
+      size = in.nextInt(); //reading size of array
+      arr = new int[size][size]; //create array
+      for (int i = 0; i < size; i++) {
+          for (int j = 0; j < size; j++) {
+              arr[i][j] = in.nextInt(); 
+              if ( i+1 == j+1) c1 += arr[i][j];
+              if (i+j+2 == size + 1)  c2 += arr[i][j];
+          }
+      }
+      System.out.println(Math.abs(c1 - c2));
+    }
+}
