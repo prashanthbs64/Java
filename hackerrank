@@ -31,3 +31,36 @@ public class MyClass {
       System.out.print(Acount + " " + Bcount);
     }
 }
+
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+
+https://www.hackerrank.com/challenges/a-very-big-sum/problem?isFullScreen=true
+public class MyClass {
+    public static void main(String args[]) {
+      
+      
+      Scanner in = new Scanner(System.in);
+      int n ;
+      n = in.nextInt();
+      long sum = 0;
+      long[] arr;
+        // allocating memory for 5 integers.
+      arr = new long[n];
+      //read all integers of array using for loop 
+      for(int i = 0 ;i<n;i++){
+          arr[i] = in.nextLong(); //reading arr elements
+          sum += arr[i]; //calculate sum of arr elements
+      }
+      System.out.println(sum);
+      
+    }
+}
+
