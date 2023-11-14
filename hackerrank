@@ -87,3 +87,28 @@ public class MyClass {
       System.out.println(Math.abs(c1 - c2));
     }
 }
+
+
+
+https://www.hackerrank.com/challenges/plus-minus/problem
+public class MyClass {
+    
+    public static void main(String args[]) {
+      
+      Scanner in = new Scanner(System.in);
+      int size;
+      size = in.nextInt();
+      int[] A;
+      A = new int[size];
+      int P = 0 , N = 0 , O = 0;
+      for (int i = 0; i < A.length; i++) {
+            A[i] = in.nextInt();
+            if (A[i] > 0) P++;
+            else if (A[i] < 0) N++;
+            else O++;
+        }
+      System.out.println((float)P/size);
+      System.out.println((float)N/size);
+      System.out.println((float)O/size);   
+    }
+}
