@@ -202,3 +202,39 @@ public class MyClass {
     }
 }
 
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+      
+      Scanner in = new Scanner(System.in);
+      String S = in.next();
+      String Indicator = S.substring(8,10);
+      String Hour = S.substring(0,2);
+      int Hr = Integer.parseInt(Hour);
+      if (Indicator.equals("PM") && Hr != 12) {
+          Hr = Hr + 12;
+          System.out.println(Hr + S.substring(2,8));
+      }
+      else if (Indicator.equals("PM") && Hr == 12){
+          System.out.println(S.substring(0,8));
+      }      
+      else if (Indicator.equals("AM") && Hr == 12){
+          System.out.println("00"+S.substring(2,8));
+      }
+      else {
+          System.out.println(S.substring(0,8));
+      }
+    }
+}
+
+
