@@ -1,0 +1,5 @@
+Hashing in Java is a technique for mapping data to a secret key, that can be used as a unique identifier for data. 
+It employs a function that generates those keys from the data; this function is known as the Hash-function, 
+and the output of this function (keys) is known as Hash-values. 
+To provide quick access to the data, we store it as key(Hash values) value(real data) pairs in an array called Hash-table, 
+which uses keys as indexes and values as the data to be stored at each index location.
