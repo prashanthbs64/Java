@@ -10,3 +10,26 @@ Key(HashValue) is unique identifier of the data .
 Hashing is basically as data structure that stores data effitiently to solve problems.
 https://www.scaler.com/topics/java/what-is-hashing-in-java/
 
+//simple array hash table to query from array a with time complexity O(1);
+import java.util.*;
+
+public class Main {
+    public static void main (String[] args) {
+        int[] a = {1, 3, 3, 4, 1, 4, 4, 4, 4};
+        int n = a.length;
+        int[] b = new int[n + 1];
+        //create hashtable for loopkup with timecomplexity O(1)
+        for (int i = 0 ; i < n ; i++) {
+            int x = a[i];
+            b[x]++;
+        } 
+        int[] queries = {3, 4, 1};
+        int nq = queries.length;
+        for (int i = 0 ; i < nq ; i++) {
+            int x = queries[i];
+            System.out.print(b[x] + " ");
+        }
+    }
+}
+
+
