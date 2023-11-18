@@ -58,3 +58,29 @@ In Java, HashMap<Integer, String> map : Average time complexity is O(1) and wors
 
 https://docs.google.com/document/d/1e_JQXvnEwq5Gp_JGHpny7f6EVb5lecjncIydU7twPao/edit
 https://docs.google.com/document/d/1zadjci7AJqGgPFkn0d_FV9LIX6blVJKZCfneYM6F2mc/edit
+
+
+HashSet example : check if arr2 is subset of arr1
+import java.util.*;
+
+public class Main{
+    
+    public static void main (String[] args) {
+        int[] arr1 = {6,7,3,2};
+        int[] arr2 = {2,3};
+        int n1 = arr1.length;
+        int n2 = arr2.length;
+        //create Hashset for lookup from arr1
+        Set<Integer> st = new HashSet<>();
+        for (int i = 0 ; i < n1 ; i++) {
+            st.add(arr1[i]);
+        } 
+        for (int i = 0;i < n2 ; i++) {
+            if(!st.contains(arr2[i])) {
+                System.out.println("arr2 is not subset of arr1");
+                return;
+            }
+        }
+        System.out.println("arr2 is subset of arr1");
+    }
+}
