@@ -319,5 +319,116 @@ public class MyClass {
     }
 }
 
+https://www.hackerrank.com/challenges/kangaroo/problem
+    public static String kangaroo(int x1, int v1, int x2, int v2) {
+    // Write your code here
+    //since x2 > x1 given , if v2 > v1 return NO
+    if (v2 > v1) return "NO";
+    int gap = Math.abs(x2 - x1); //calculate initial gap between two kangaroos
+    while (x2 != x1) {
+        x1 = x1 + v1;
+        x2 = x2 + v2;
+        int newgap = Math.abs(x2 - x1);
+        if (newgap >= gap) return "NO"; //gap should be decreasing inorder to meet
+    }
+    return "YES";
+
+    }
+
+
+Assuming both do n jumps, their distances functions are
+
+y1 = f(k1) = x1 + n * v1; // straight line equation
+y2 = f(k2) = x2 + n * v2; //straight line equation
+Both lines will intersect if y1 = y2 after n jumps (n has to be positive integer. Hence,
+
+==> x1 + n * v1 =  x2 + n * v2
+==> n = (x2 - x1) / (v1 - v2)
+Notice something? since x2 > x1 (kangaroo 1 starts from behind, rules says 0 <= x1 < x2 <= 10000), the ratio n can only be positive if v1 > v2 (kangaroo 1 has to have higher speed to catch up with kangaroo 2. Slower kangaroo can't catch up from behind. We check, either n is integer or if dx divides dv.
+
+string kangaroo(int x1, int v1, int x2, int v2) {
+    if (v1  <  v2) {
+        return "NO";
+    }
+    
+    if ((x2 - x1) % (v1 - v2) == 0) {
+        return "YES";
+    }
+    
+    return "NO";
+}
+
+
+https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+
+    public static List<Integer> breakingRecords(List<Integer> scores) {
+    // Write your code here
+    int min = scores.get(0);
+    int max = scores.get(0);
+    int minCount = 0, maxCount = 0;
+    for (int num : scores) {
+        if (num < min ) {
+            min = num;
+            minCount++;
+        }
+        else if (num > max) {
+            max = num ;
+            maxCount++;
+        }
+    }
+    List <Integer> ans = Arrays.asList(maxCount , minCount);
+    return ans;
+    }
+
+}
+
+
+https://www.hackerrank.com/challenges/the-birthday-bar/problem
+//the below code is O(N2)
+    public static int birthday(List<Integer> s, int d, int m) {
+    int sum = 0 ,  count = 0;
+    for (int i = 0; i <= s.size() - m; i++) {
+        for (int j = i; j < i + m; j++) {
+            sum += s.get(j);
+        }
+        if (sum == d) {
+            count++;
+        }
+        sum = 0;
+    }
+    return count;
+    }
+
+}
+below code is O(N)
+public static int birthday(List<Integer> s, int d, int m) {
+        int start, end;
+        start=0;
+        end=m-1;
+        int count, sum;
+        count=sum=0;
+        for(int i=0;i<=end;i++){
+            sum+=s.get(i);
+        }
+        
+        if(sum==d){
+            count++;
+        }
+        
+        while(end!=s.size()-1){
+            sum-=s.get(start);
+            start++;
+            end++;
+            sum+=s.get(end);
+            if(sum==d){
+                count++;
+            }
+        }
+        
+        return count;
+    }
+
+
+
 
 
