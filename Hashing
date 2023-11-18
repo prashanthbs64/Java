@@ -3,3 +3,10 @@ It employs a function that generates those keys from the data; this function is 
 and the output of this function (keys) is known as Hash-values. 
 To provide quick access to the data, we store it as key(Hash values) value(real data) pairs in an array called Hash-table, 
 which uses keys as indexes and values as the data to be stored at each index location.
+
+data ---------> Hash Function ------------ > HashValue (Key) 
+Key(HashValue) is unique identifier of the data .
+(key,data)  pair is stored in array called HashTable as key as indexes and values as the data to be stored at that index.
+Hashing is basically as data structure that stores data effitiently to solve problems.
+https://www.scaler.com/topics/java/what-is-hashing-in-java/
+
