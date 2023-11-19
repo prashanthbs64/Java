@@ -428,6 +428,83 @@ public static int birthday(List<Integer> s, int d, int m) {
         return count;
     }
 
+https://www.hackerrank.com/challenges/divisible-sum-pairs/problem   
+//O(N2)
+ public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
+    // Write your code here
+    int count = 0;
+    for (int i = 0; i < ar.size() - 1; i++)   {
+        for (int j = i + 1; j < ar.size(); j++) {
+            
+            if ((ar.get(i) + ar.get(j)) % k == 0) count++;
+        }
+    }
+    return count;
+    }
+
+
+
+https://www.hackerrank.com/challenges/migratory-birds/problem
+
+    public static int migratoryBirds(List<Integer> arr) {
+    // Write your code here
+    int BirdTypeID;
+    int BirdTypeCount;
+    HashMap <Integer,Integer> hm = new HashMap<>();
+    for (int i = 0; i < arr.size(); i++) {
+        int CountofID = hm.getOrDefault(arr.get(i), 0);
+        hm.put(arr.get(i), CountofID + 1);
+    }
+    BirdTypeID = 0;
+    BirdTypeCount = 0;    
+    Set<Integer> keys = hm.keySet();
+       for(Integer key : keys) {
+           if(hm.get(key) > BirdTypeCount){
+               BirdTypeID = key;
+               BirdTypeCount = hm.get(key);
+           }
+           if (hm.get(key) == BirdTypeCount && BirdTypeID > key) {
+               BirdTypeID = key;
+           }
+       }
+        return BirdTypeID;
+
+    }
+
+
+https://www.hackerrank.com/challenges/counting-valleys/problem
+
+    public static int countingValleys(int steps, String path) {
+    // Write your code here
+        int StepCount = 0;
+        int sum = 0;
+        int ValleyCount = 0;
+        int PrevSum = 0;
+        for (int i = 0; i < path.length(); i++) {
+            PrevSum = sum;
+            char ch = path.charAt(i);
+            if (ch == 'U') sum += 1;
+            else sum -= 1;
+        if( sum == 0 && PrevSum < 0) ValleyCount++;            
+        }
+        return ValleyCount;
+    }
+
+
+https://www.hackerrank.com/challenges/the-hurdle-race/problem?isFullScreen=true
+
+    public static int hurdleRace(int k, List<Integer> height) {
+    // Write your code here
+    int Max = height.get(0); or Integer.MIN_INT
+    for (int i = 1; i < height.size(); i++) {  or start from i = 0
+        if ( height.get(i) > Max) Max = height.get(i);
+    }
+    if (k >= Max) return 0;
+    else return (Max - k);
+
+    }
+
+
 
 
 
