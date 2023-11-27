@@ -37,26 +37,33 @@ Hashing is basically as data structure that stores data effitiently to solve pro
 https://www.scaler.com/topics/java/what-is-hashing-in-java/
 
 //simple array hash table to query from array a with time complexity O(1);
-import java.util.*;
+//Time Complexity : As we are running a single for loop , O(N) time is required , to answer all the queries , we iterate over the queries and answer each one of them in O(1) time as we have all the answers pre calculated :-) 
+//So , total time taken : O(N+Q).
 
-public class Main {
-    public static void main (String[] args) {
-        int[] a = {1, 3, 3, 4, 1, 4, 4, 4, 4};
-        int n = a.length;
-        int[] b = new int[n + 1];
-        //create hashtable for loopkup with timecomplexity O(1)
-        for (int i = 0 ; i < n ; i++) {
-            int x = a[i];
-            b[x]++;
-        } 
-        int[] queries = {3, 4, 1};
-        int nq = queries.length;
-        for (int i = 0 ; i < nq ; i++) {
-            int x = queries[i];
-            System.out.print(b[x] + " ");
-        }
-    }
+//Space Complexity : We created an extra array of size 'N' , which is array 'b' . So space taken is O(N) by the algorithm.
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		 int[] a = {1, 3, 3, 4, 1, 4, 4, 4, 4}; //given Array
+		 int n = a.length;  //calculate size of Array
+         int[] b = new int[n + 1]; //create a new array (frequency counter) of size n+1
+         //create hashtable for loopkup with timecomplexity O(1)
+         for (int i = 0; i < n ; i++) {  //array frequency counter for lookup
+             int x = a[i];
+             b[x]++;
+         } 
+		 
+		 int[] queries = {1,4}; //numbers whose frequency needs to be calculated
+		 int qn = queries.length;
+		 for (int i = 0 ; i < qn ; i++) {
+		     int x = queries[i];
+		     System.out.println(x + " number occurs " + b[x] + " times in the array");
+		 } 
+	}
 }
+
 HashSet stores unique elements without any associated values, while HashMap stores key-value pairs where the keys are unique identifiers and the values are associated data.
 HashSet is a collection that stores unique elements, meaning it does not allow duplicate values. It is implemented using a hash table, which means the elements are stored in a hash table using their hash code as the key. This makes it very efficient to add, remove, and search for elements.
 In a HashSet, the elements are not stored in any particular order. This means that when you iterate over the elements, the order in which you receive them is not guaranteed. HashSet does not provide any methods to retrieve the elements in a specific order.
