@@ -61,6 +61,9 @@ public class Main
 		     int x = queries[i];
 		     System.out.println(x + " number occurs " + b[x] + " times in the array");
 		 } 
+//worst case Time Complexity O(N+Q) , space complexity O(N)
+//this method is good only when array is small and elements of array belong to range of 1 to N.
+//if the number of elements and size is too large this method is not suitable
 	}
 }
 
