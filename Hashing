@@ -207,3 +207,35 @@ public class Main
         
 	}    
 }
+
+
+check if array contains duplicate elements within k distances from each other
+// create HashMap element:position 
+//for each element check the current elements position - position of same element in hashmap if present <= k return true
+
+
+import java.util.*;
+public class Main
+{  //check if arr2 is part of arr1 (Note duplicates can be present in arr1 and/or arr2)
+	public static void main(String[] args) {
+    int arr[] = {10, 5, 3, 4, 3, 5, 6};
+    int n = arr.length;
+    int k = 3;
+    boolean ans = checkDuplicatesWithinK(arr,k);
+    if (ans) System.out.println("Yes");
+    else System.out.println("No");
+	}
+	static boolean checkDuplicatesWithinK(int[] arr , int k) {
+	    Map <Integer,Integer> hmap = new HashMap<>();
+	    for (int i = 0; i < arr.length; i++ ) {
+	        if (!hmap.containsKey(arr[i])) {
+	            hmap.put(arr[i] ,i);
+	        }
+	        else {
+	            int hpos = hmap.get(arr[i]);
+	            if (i - hpos <= k) return true;
+	        }
+	    }
+	    return false;
+	}
+}
