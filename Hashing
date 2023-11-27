@@ -147,3 +147,38 @@ public class Main
 }
 
 Check if the given array is subset of another array with duplicates present (HashMap to be used instead of HashSet)
+
+import java.util.*;
+public class Main
+{  //check if arr2 is part of arr1 (Note duplicates can be present in arr1 and/or arr2)
+	public static void main(String[] args) {
+        int[] arr1 = {6,7,3,2,2};
+        int[] arr2 = {6,7,2,2};
+        int n1 = arr1.length;
+        int n2 = arr2.length;
+        boolean ans = IsSubset(arr1,arr2); //calling function IsSubset that returns T/F
+        if(ans) System.out.println("arr2 is a subset of arr1");
+        else System.out.println("arr2 is not a subset of arr1");
+	}    
+        static boolean IsSubset(int[]arr1 , int[]arr2) {
+            //if size of arr2 > arr1 then arr2 cannot be subset of arr1 hence return false;
+            if (arr1.length < arr2.length) return false; 
+            Map <Integer , Integer> hmap = new HashMap<>();
+            for (Integer i : arr1) {
+                //check for key , if not present default value is 0 and then add 1
+                int CountofI = hmap.getOrDefault( i , 0) + 1 ;
+                hmap.put (i , CountofI);
+            }
+            for(Integer i : arr2) {
+                //if element of arr2 is not present in arr1 then return false;
+                if (!hmap.containsKey(i)) return false;
+                //if the count of the key is 0 , alse return false
+                if (hmap.get(i) == 0) return false;
+                //if element found reduce freq by 1
+                int CountofI = hmap.get(i);
+                hmap.put(i,CountofI-1);
+            }
+            return true;
+            
+        }
+}
