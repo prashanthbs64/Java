@@ -101,20 +101,20 @@ public class Main{
     public static void main (String[] args) {
         int[] arr1 = {6,7,3,2};
         int[] arr2 = {2,3};
-        int n1 = arr1.length;
-        int n2 = arr2.length;
+        int n1 = arr1.length; //calculate size of arr1
+        int n2 = arr2.length; //calculate size of arr2
         //create Hashset for lookup from arr1
         Set<Integer> st = new HashSet<>();
         for (int i = 0 ; i < n1 ; i++) {
             st.add(arr1[i]);
         } 
-        for (int i = 0;i < n2 ; i++) {
+        for (int i = 0;i < n2 ; i++) { //lookup hashset and if any element not present  then return as not subset
             if(!st.contains(arr2[i])) {
                 System.out.println("arr2 is not subset of arr1");
                 return;
             }
         }
-        System.out.println("arr2 is subset of arr1");
+        System.out.println("arr2 is subset of arr1"); // if all elements present in Hashset then print is subset
     }
 }
 
