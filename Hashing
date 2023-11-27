@@ -182,3 +182,28 @@ public class Main
             
         }
 }
+
+//Minimum operations to make all elements equal in an array.
+//find the most frequent element in the array . then n = frequency of most freq element is the answer.
+
+import java.util.*;
+public class Main
+{  //check if arr2 is part of arr1 (Note duplicates can be present in arr1 and/or arr2)
+	public static void main(String[] args) {
+        int[] arr = {1, 2, 1, 4, 3, 1};
+        int n = arr.length;
+        Map <Integer,Integer> hmap = new HashMap<>();
+        for (int i = 0 ; i < n; i++ ) {
+            int countofI = hmap.getOrDefault(arr[i] , 0) + 1;
+            hmap.put(arr[i] , countofI);
+        } 
+        int Maxfreq = 0;
+        for (Map.Entry<Integer,Integer> entry: hmap.entrySet()) {
+            int freq = entry.getValue();
+            if (freq > Maxfreq) Maxfreq = freq;
+        }
+        System.out.println(n + " " + Maxfreq);
+        System.out.println(n - Maxfreq);
+        
+	}    
+}
