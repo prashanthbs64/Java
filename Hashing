@@ -93,7 +93,7 @@ https://docs.google.com/document/d/1e_JQXvnEwq5Gp_JGHpny7f6EVb5lecjncIydU7twPao/
 https://docs.google.com/document/d/1zadjci7AJqGgPFkn0d_FV9LIX6blVJKZCfneYM6F2mc/edit
 
 
-HashSet example : check if arr2 is subset of arr1
+HashSet example : check if arr2 is subset of arr1 (Note duplicates are not present so Hashset can be used)
 import java.util.*;
 
 public class Main{
@@ -146,3 +146,4 @@ public class Main
 	}
 }
 
+Check if the given array is subset of another array with duplicates present (HashMap to be used instead of HashSet)
