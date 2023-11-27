@@ -4,7 +4,8 @@ and the output of this function (keys) is known as Hash-values.
 To provide quick access to the data, we store it as key(Hash values) value(real data) pairs in an array called Hash-table, 
 which uses keys as indexes and values as the data to be stored at each index location.
 
-//frequency counter to check frequency without HashMap with O(N2)
+//frequency counter to check frequency without HashMap 
+Time Complexity : This method iterates over the full array of size 'N' for each of the 'Q' queries , so the time complexity will be O(N*Q) .
 import java.util.*;
 public class Main
 {
