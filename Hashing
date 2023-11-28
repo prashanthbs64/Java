@@ -149,6 +149,9 @@ public class Main
 	}
 }
 
+frequence query using brute force is O(N*Q)
+frequency query using frequncy array counter O(N+Q)
+frequency query using HashMap O(N)
 Check if the given array is subset of another array with duplicates present (HashMap to be used instead of HashSet)
 
 import java.util.*;
