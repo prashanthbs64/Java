@@ -397,3 +397,39 @@ public class Main
         return -1; //return -1 if not found such element
 	}
 }
+
+//given string of words , output all the characters that show up in all strings within the words.
+//including duplicates.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		String[] words = {"ookloo","ookkl","ooollk","oolka"};
+		Map <Character,Integer> MinFreqhmap = new HashMap<>();
+		//Min freq Hashmap for all characters a to z
+		for (char ch = 'a'; ch <= 'z' ;ch++ ) {
+		    MinFreqhmap.put(ch,1000);
+		}
+		for (String word : words) {
+		    Map <Character,Integer> freqhmap = new HashMap<>();
+		    for (int i = 0 ; i < word.length() ; i++) {
+		        char c = word.charAt(i);
+		        freqhmap.put(c,freqhmap.getOrDefault(c,0) + 1);
+		    }
+		    //for every word update MinFreqHashMap with Values to minimum
+		    for (char ch = 'a'; ch <= 'z' ;ch++) {
+		        int MinCount = Math.min(MinFreqhmap.get(ch),freqhmap.getOrDefault(ch,0));
+		        MinFreqhmap.put(ch,MinCount);
+		    } 
+		}
+		List <Character> lst = new ArrayList<>();
+		for(char ch = 'a';ch <= 'z';ch++) {
+		    while (MinFreqhmap.get(ch) > 0) {
+		        lst.add(ch);
+		        MinFreqhmap.put(ch,MinFreqhmap.get(ch) - 1);
+		    }
+		}
+		System.out.println(lst);
+		
+	}
+}
