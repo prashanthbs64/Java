@@ -31,8 +31,9 @@ public class Main
 data ---------> Hash Function ------------ > HashValue (Key) 
 Key(HashValue) is unique identifier of the data .
 (key,data)  pair is stored in array called HashTable as key as indexes and values as the data to be stored at that index.
-Hashing is basically as data structure that stores data effitiently to solve problems.
+Hashing is basically as data structure that stores data effitiently to solve problems. TC O(1)
 https://www.scaler.com/topics/java/what-is-hashing-in-java/
+
 
 //simple array hash table to query from array a with time complexity O(1);
 //Time Complexity : As we are running a single for loop , O(N) time is required , to answer all the queries , we iterate over the queries and answer each one of them in O(1) time as we have all the answers pre calculated :-) 
@@ -44,24 +45,19 @@ import java.util.*;
 public class Main
 {
 	public static void main(String[] args) {
-		 int[] a = {1, 3, 3, 4, 1, 4, 4, 4, 4}; //given Array
-		 int n = a.length;  //calculate size of Array
-         int[] b = new int[n + 1]; //create a new array (frequency counter) of size n+1
-         //create hashtable for loopkup with timecomplexity O(1)
-         for (int i = 0; i < n ; i++) {  //array frequency counter for lookup
-             int x = a[i];
-             b[x]++;
-         } 
-		 
-		 int[] queries = {1,4}; //numbers whose frequency needs to be calculated
-		 int qn = queries.length;
-		 for (int i = 0 ; i < qn ; i++) {
-		     int x = queries[i];
-		     System.out.println(x + " number occurs " + b[x] + " times in the array");
-		 } 
-//worst case Time Complexity O(N+Q) , space complexity O(N)
-//this method is good only when array is small and elements of array belong to range of 1 to N.
-//if the number of elements and size is too large this method is not suitable
+    int[] a = {1, 3, 3, 4, 1, 4, 4, 4, 4}; //given Array
+    int[] queries = {4,1};
+    int[] b = new int[a.length + 1];
+    //create frequency table using array
+    for (int i = 0 ; i < a.length ; i++) {
+        int x = a[i];
+        b[x]++;
+        } 
+    //each query below has TC O(1)
+    for (int i = 0 ; i < queries.length ; i++ ) {
+        int qry = queries[i];
+        System.out.println(qry + " " + b[qry]);
+        	} 
 	}
 }
 
