@@ -321,3 +321,29 @@ public class Main
 //24
 
 
+//Given array with repeated elements , find max distance b/n two occurances of same element.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {3,2,1,3,4,1,2,3}; //given array
+		int MaxDistance = 0; //let MaxDistance be initialized to 0
+		//HashMap <element,firstoccurance of element>
+		Map <Integer,Integer> IndexMap = new HashMap<>();
+		//for every element , check the index Distance if key present in HashMap
+		//else add element,index of first occurance to HashMap.
+		for (int i = 0; i < arr.length ; i++) {
+		    if (IndexMap.containsKey(arr[i])) {  //if key exists
+		    //calculate the Max Distance
+		        MaxDistance = Math.max(MaxDistance, i - IndexMap.get(arr[i]));
+		    }
+		    else {
+		        //else add the key to HashMap
+		        IndexMap.put(arr[i],i);
+		    }
+		} 
+		System.out.println(MaxDistance);
+	}
+}
+//7
+
