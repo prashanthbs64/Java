@@ -173,6 +173,7 @@ public class Main{
 	}
 	static boolean IsSubset(int[] arr1 , int[] arr2) {
 	    if (arr1.length < arr2.length) return false;
+		//element:freq map
 	    Map <Integer,Integer> hmap = new HashMap<>();
 	    for (Integer i : arr1) {
 	        int CountofI = hmap.getOrDefault(i,0) +1;
