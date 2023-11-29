@@ -4,30 +4,28 @@ and the output of this function (keys) is known as Hash-values.
 To provide quick access to the data, we store it as key(Hash values) value(real data) pairs in an array called Hash-table, 
 which uses keys as indexes and values as the data to be stored at each index location.
 
-//frequency counter to check frequency without HashMap 
-Time Complexity : This method iterates over the full array of size 'N' for each of the 'Q' queries , so the time complexity will be O(N*Q) .
+//frequency counter to query freq of element from array without HashMap 
+//TC : This method iterates over the full array of size 'N' for each of the 'Q' queries ,
+//so the time complexity will be O(N*Q) .
 import java.util.*;
 public class Main
 {
 	public static void main(String[] args) {
-		 int[] a = {1, 3, 3, 4, 1, 4, 4, 4, 4}; //given Array
-		 int n = a.length;  //calculate size of Array
-		 
-		 Scanner sc = new Scanner (System.in);
-		 int q = sc.nextInt();
-		 
-		 for (int i = 0 ; i < q ; i++ ) {
-		     int qry = sc.nextInt();
-		     int frq = 0;
-		     
-		     for (int j = 0 ;j < n ; j++) {
-		         if (a[j] == qry) frq++;
-		     }
-		     
-		     System.out.println(qry + " number occurs " + frq + " times in the array");
-		 } 
+    int[] a = {1, 3, 3, 4, 1, 4, 4, 4, 4}; //given Array
+    int[] queries = {4,1};
+    //below loops run with TC O(N*Q) and SC = 0
+    for (int i = 0 ; i < queries.length ;i++) {
+        int qry = queries[i];
+        int frq = 0;
+        for (int j = 0 ; j < a.length ; j++) {
+            if (a[j] == qry) frq++;
+            }
+            System.out.println(qry + " " + frq);
+        } 
 	}
 }
+//4 5
+//1 2
 
 
 data ---------> Hash Function ------------ > HashValue (Key) 
