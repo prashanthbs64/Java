@@ -372,3 +372,28 @@ public class Main
 	}
 }
 //5
+
+//Given a string return first non repeating character in that string , if no return -1
+//solution : create freq HashMap for characters , then query through hashmap and break when found
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		char[] strArray = {'a','b','c','a','b','a','c','b','a','d','c','e'};
+		int ans = LastIndex(strArray);
+		System.out.println(ans);
+	}
+	static int LastIndex(char[] strArray){
+	    Map<Character,Integer> charCountMap = new HashMap<>();
+	    for (char c : strArray) {
+	            charCountMap.put(c,charCountMap.getOrDefault(c,0) + 1);
+	        }
+        for (int i = 0 ; i < strArray.length ; i++) {
+            if (charCountMap.get(strArray[i]) == 1) {
+                return i; //return as soon as condition is satisfied as we need to find first non repeating char
+                }
+            }
+        return -1; //return -1 if not found such element
+	}
+}
