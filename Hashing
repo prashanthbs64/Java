@@ -229,10 +229,9 @@ check if array contains duplicate elements within k distances from each other
 // create HashMap element:position 
 //for each element check the current elements position - position of same element in hashmap if present <= k return true
 
-
 import java.util.*;
 public class Main
-{  //check if arr2 is part of arr1 (Note duplicates can be present in arr1 and/or arr2)
+{  
 	public static void main(String[] args) {
     int arr[] = {10, 5, 3, 4, 3, 5, 6};
     int n = arr.length;
