@@ -322,6 +322,7 @@ public class Main
 
 
 //Given array with repeated elements , find max distance b/n two occurances of same element.
+//TC and SC O(N)
 import java.util.*;
 public class Main
 {
