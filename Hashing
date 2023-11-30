@@ -466,3 +466,37 @@ public class Main
 		System.out.println(longestConsChain);
 	}
 }
+
+//given unsorted array of integers , return the length of longest consecutive elements sequence in O(N)
+//use two HashMaps present and checked to get to solution with TC O(N) SC O(N)
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] nums = {15,-2,2,-8,1,7,10,23};
+		Map <Integer,Integer> PrefixSumhmap = new HashMap<>();
+		//PrefixSumhmap.put(nums[0],0);
+		int sum = 0;
+		int longestChain = 0;
+		for (int i = 0 ; i < nums.length ; i++) {
+		    int CurrentLen = 0;
+            sum += nums[i];
+		    if (sum == 0) longestChain = i + 1;
+		    else {
+		        //<sum,firstOccurance> of prefixSum is stored in HashMap
+		        if (!PrefixSumhmap.containsKey(sum)) {
+		            PrefixSumhmap.put(sum,i);
+		        }
+		        else {
+		            CurrentLen = i - PrefixSumhmap.get(sum); //curent index - firstOccurance
+		            longestChain = Math.max (longestChain,CurrentLen);
+		        }		        
+		    }
+		    
+		} 
+		System.out.println(longestChain);
+       //for( Map.Entry<Integer, Integer> e : PrefixSumhmap.entrySet()) {
+        //   System.out.print(e.getKey() + " ");
+        //   System.out.println(e.getValue()); }
+	}
+}
