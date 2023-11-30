@@ -467,8 +467,8 @@ public class Main
 	}
 }
 
-//given unsorted array of integers , return the length of longest consecutive elements sequence in O(N)
-//use two HashMaps present and checked to get to solution with TC O(N) SC O(N)
+//given unsorted array of integers , return the length of longest subarray that sumup to 0
+//olution with TC O(N) SC O(N)
 import java.util.*;
 public class Main
 {
