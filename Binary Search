@@ -1,0 +1,212 @@
+largest sub array find divisible by k prefixsum involved
+given array of 0s and 1s , find the len of largest sub array with eq no of 0s and 1s
+above is similar to largest subarray with sum = 0
+longest increasing subseq
+
+
+//binary search java
+//TC : each iteration range to seach is reduced by 1/2. N , N/2 , N/4.....1 so TClog2(N).
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {1,2,3,4,5,6,7,8,9,10}; //sorted array
+		int x = 8;
+		int low = 0;
+		int high = arr.length - 1;
+		while (low <= high) {
+		    int mid = (low + high)/2;
+		    if (arr[mid] == x) {
+		        System.out.println(mid);
+		        break;
+		    }
+		    else if (arr[mid] < x) low = mid + 1;
+		    else high = mid - 1;
+		}
+	}
+}
+
+//binary search java
+//TC : each iteration range to seach is reduced by 1/2. N , N/2 , N/4.....1 so TClog2(N).
+public class Main
+{
+	public static void main(String[] args) {
+		char[] arr = {'F','F','F','F','F','F','F','F','F','F','T','T','T','T','T','T'}; //sorted array
+		int firstOccurance = -1;
+		int low = 0;
+		int high = arr.length - 1;
+		while (low <= high) {
+		    int mid = (low + high)/2;
+		    if (arr[mid] == 'T') {
+		        firstOccurance = mid;
+		        //low = low ;
+		        high = mid - 1;
+		    }
+		    else {
+		        low = mid + 1;
+		        //high = high;
+		    }
+		    System.out.println(low + " " + high);
+		}
+		System.out.println(firstOccurance);
+	}
+}
+
+//binary search java
+//TC : each iteration range to seach is reduced by 1/2. N , N/2 , N/4.....1 so TClog2(N).
+//search if element k present in sorted array , if present return true else false;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {4,5,7,7,10,10,20,25,25,30,30,40,50};
+		int k = 30; //element to be searched
+		int firstOccurance = -1;
+		int low = 0;
+		int high = arr.length - 1;
+		boolean ans = bs(arr, low , high, k);
+		if (ans) System.out.println("True");
+		else System.out.println("False");
+	}
+	static boolean bs (int[] arr , int low , int high, int k) {
+		while (low <= high) {
+		    int mid = (low + high)/2;
+		    if (arr[mid] == k) {
+		        System.out.println(mid + " " + true);
+		        return true;
+		    }
+		    else if (arr[mid] < k) {
+		        low = mid + 1;
+		        high = high;
+		    }
+		    else {
+		        low = low ;
+		        high = mid - 1;
+		    }
+		}
+		return false;
+	}
+}
+//9 true
+//True
+//SC:1 TC log2(N)
+
+//binary search java
+//TC : each iteration range to seach is reduced by 1/2. N , N/2 , N/4.....1 so TClog2(N).
+//get first and last index of occurance of element in an sorted array.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {4,5,7,7,10,10,20,25,25,30,30,40,50};
+		int k = 30; //element to be searched
+		int low = 0;
+		int high = arr.length - 1;
+		int firstOccurance = bsf(arr, low , high, k);
+		int lastOccurance = bsl(arr, low , high, k);
+		List <Integer> lst = new ArrayList<>();
+		lst.add(firstOccurance);
+		lst.add(lastOccurance);
+		System.out.println(lst);
+	}
+	static int bsf (int[] arr , int low , int high, int k) {
+	    int firstOccurance = -1;
+		while (low <= high) {
+		    int mid = (low + high)/2;
+		    if (arr[mid] == k) {
+		        firstOccurance = mid;
+		        return firstOccurance;
+		    }
+		    else if (arr[mid] < k) {
+		        low = mid + 1;
+		        high = high;
+		    }
+		    else {
+		        low = low ;
+		        high = mid - 1;
+		    }
+		}
+		return firstOccurance;
+	}
+	static int bsl (int[] arr , int low , int high, int k) {
+	    int lastOccurance = -1;
+		while (low <= high) {
+		    int mid = (low + high)/2;
+		    if (arr[mid] == k) {
+		        lastOccurance = mid;
+		        low = mid + 1;
+		        high = high;
+		    }
+		    else if (arr[mid] < k) {
+		        low = mid + 1;
+		        high = high;
+		    }
+		    else {
+		        low = low ;
+		        high = mid - 1;
+		    }
+		}
+		return lastOccurance;
+	}	
+}
+
+//slightly change method 
+//binary search java
+//TC : each iteration range to seach is reduced by 1/2. N , N/2 , N/4.....1 so TClog2(N).
+//get first and last index of occurance of element in an sorted array.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		int[] arr = {4,5,7,7,10,10,20,25,25,30,30,40,50};
+		int k = 30; //element to be searched
+		int low = 0;
+		int high = arr.length - 1;
+		int firstOccurance = bsf(arr, low , high, k);
+		int lastOccurance = bsl(arr, low , high, k);
+		List <Integer> lst = new ArrayList<>();
+		lst.add(firstOccurance);
+		lst.add(lastOccurance);
+		System.out.println(lst);
+	}
+	static int bsf (int[] arr , int low , int high, int k) {
+	    int firstOccurance = -1;
+		while (low <= high) {
+		    int mid = (low + high)/2;
+		    if (arr[mid] == k) {
+		        firstOccurance = mid;
+		        high = mid - 1;
+		        low = low;
+		    }
+		    else if (arr[mid] < k) {
+		        low = mid + 1;
+		        high = high;
+		    }
+		    else {
+		        low = low ;
+		        high = mid - 1;
+		    }
+		}
+		return firstOccurance;
+	}
+	static int bsl (int[] arr , int low , int high, int k) {
+	    int lastOccurance = -1;
+		while (low <= high) {
+		    int mid = (low + high)/2;
+		    if (arr[mid] == k) {
+		        lastOccurance = mid;
+		        low = mid + 1;
+		        high = high;
+		    }
+		    else if (arr[mid] < k) {
+		        low = mid + 1;
+		        high = high;
+		    }
+		    else {
+		        low = low ;
+		        high = mid - 1;
+		    }
+		}
+		return lastOccurance;
+	}	
+}
+
+//also look into single bs function rather than two functions
